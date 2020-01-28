@@ -1,14 +1,51 @@
-let num = 266219;
+'use strict';
 
-let arr = num.toString().split("");
+var lang = 'ru';
 
-var result = arr.reduce(function(sum, current) {
-        return sum * current;
-    });
+let weekRu = "понедельник, вторник, среда, четверг, пятница, субота, воскресенье";
+let weekEn = "monday, tuesday, wednesday, thursday, friday, saturday, sunday";
 
-console.log(result);
+//1
+//a
 
-let pow = result**3;
-let powStr = pow.toString();
+if (lang == "ru"){
+    console.log(weekRu);
+} else {
+    console.log(weekEn);
+}
 
-console.log(powStr.substr(0, 2));
+//b
+
+switch (lang) {
+    case 'ru':
+        console.log(weekRu);
+        break;
+    case 'en':
+        console.log(weekEn);
+        break;
+}
+
+
+//c
+
+
+const ru = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'субота', 'воскресенье'];
+
+const en = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+function show (lang) {
+    const arr = [['ru', ru], ['en', en]];
+    console.log( Object.fromEntries(arr)[lang] );
+}
+
+show(lang);
+
+
+//2
+let namePerson = 'Maksim';
+
+let resultName = (namePerson === 'Artem') ? 'director':
+    (namePerson === 'Maksim') ? 'teacher' :
+        'student';
+
+console.log(resultName);
